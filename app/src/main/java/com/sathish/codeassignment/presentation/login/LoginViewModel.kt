@@ -1,14 +1,10 @@
 package com.sathish.codeassignment.presentation.login
 
-import androidx.compose.runtime.State
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.sathish.codeassignment.presentation.ui.UiState
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
-import javax.inject.Inject
 
 /**
  * Created by sathish on 11,July,2024
@@ -34,7 +30,7 @@ class LoginViewModel : ViewModel() {
         }
     }
 
-    private fun validateInput(): Boolean {
+     fun validateInput(): Boolean {
         var isValid = true
         if (loginState.value.userName.isEmpty()) {
             loginState.value = loginState.value.copy(userNameError = "Username cannot be empty")
@@ -49,7 +45,7 @@ class LoginViewModel : ViewModel() {
         }
     }
 
-    fun ResetState()
+    fun resetState()
     {
         _uiState.value =UiState.Success(false)
     }

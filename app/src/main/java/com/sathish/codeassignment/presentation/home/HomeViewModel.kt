@@ -21,10 +21,7 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    val getMedicineUseCase: GetMedicineUseCase,
-    val insertMedicineUseCase: InsertMedicineUseCase,
-    val getAllMedicineUseCase: GetAllMedicineUseCase,
-    deleteAllMedicineUseCase: DeleteAllMedicineUseCase
+    val getMedicineUseCase: GetMedicineUseCase
 ): ViewModel() {
 
     private val _uiState = MutableStateFlow<UiState<List<AssociatedDrugData>>>(UiState.Idle())
